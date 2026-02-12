@@ -21,5 +21,5 @@ The implemented framework enables:
 ## Reference
 If you use this toolbox, please cite the associated study describing the method:
 
-**Pinto, H.**, Dias, C., Vergara, V. R., Bar\`{a}, C., Pernice, R., Rocha, A. P., Faes, L., and Antonacci, Y. (2025). Time-Frequency Linear Interdependence Measures Reveal Multivariate Patterns of Cerebrovascular-Autonomic Interactions in Traumatic Brain Injury. Under Submission.
+**Pinto, H.**, Dias, C., Vergara, V. R., Barà, C., Pernice, R., Rocha, A. P., Faes, L., and Antonacci, Y. (2025). Time-Frequency Linear Interdependence Measures Reveal Multivariate Patterns of Cerebrovascular-Autonomic Interactions in Traumatic Brain Injury. Under Submission.
 
