@@ -105,12 +105,11 @@ number of processes in the spectral matrix.
 
 If you use this toolbox, please cite:
 
-> Pinto, H., Dias, C., Vergara, V. R., Barà, C., Pernice, R., Rocha, A. P.,
+> [1] Pinto, H., Dias, C., Vergara, V. R., Barà, C., Pernice, R., Rocha, A. P.,
 > Faes, L., and Antonacci, Y. (2025). *Time-Frequency Linear Interdependence
 > Measures Reveal Multivariate Patterns of Cerebrovascular-Autonomic
 > Interactions in Traumatic Brain Injury.* (Manuscript under review.)
 
 ## License
 
-No license file is currently included. Until one is added, all rights are
-reserved by default; contact the author regarding reuse.
+The code is provided free of charge. It is neither exhaustively tested nor particularly well documented. The authors accept no liability for its use. Use, modification and redistribution of the code is allowed in any way users see fit. Authors ask only that authorship is acknowledged and ref. [1] is cited upon utilization of the code in integral or partial form.
