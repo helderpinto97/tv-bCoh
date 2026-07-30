@@ -3,7 +3,7 @@ clear; close all; clc;
 addpath('functions');
 
 %% ============================================================
-%  PARAMETERS  (network identical to Simulation.m)
+%  PARAMETERS
 % ============================================================
 fs    = 2;     % sampling frequency (Hz)
 nfft  = 512;    % FFT resolution (scalars are nfft-robust -> modest nfft)
@@ -43,7 +43,7 @@ t_in = 7;        % first valid spectrogram column (skip RLS transient)
 % Measure display labels
 meas_lbl = {'$F_{Y;X_1}$', '$F_{Y;X_2}$', '$F_{Y;X_1,X_2}$', '$I_{Y;X_1;X_2}$'};
 
-% Custom colormap (shared with Simulation.m) for the spectrogram
+% Custom colormap for the spectrogram
 cmap = load('colmap.mat', 'VRVmap');
 
 % Conditions to test (clean baseline + three noise colors)
@@ -59,7 +59,7 @@ fprintf('  SNR sweep (linear ratio): %s\n', mat2str(snr_list));
 fprintf('  figures -> %s\n\n', outRoot);
 
 %% ============================================================
-%  1) TRUE time-varying VAR  (noise-independent -> build once)
+% TRUE time-varying VAR  (noise-independent -> build once)
 % ============================================================
 par.poles{1} = [0.9 0.35];
 par.poles{4} = [0.9 0.10];
@@ -90,11 +90,8 @@ for n = 1:nobs
 end
 
 %% ============================================================
-%  1b) THEORETICAL measures from the TRUE TV-VAR  (ground truth)
-%      Noise-independent and estimation-free -> compute once.
-%      These exact curves replace the old coupling reference and
-%      are drawn in BLACK on every trace panel.
-% ============================================================
+% THEORETICAL measures from the TRUE TV-VAR  (ground truth)
+% =============================================================
 Fy1_th  = zeros(1,nobs);  Fy2_th = zeros(1,nobs);
 Fy12_th = zeros(1,nobs);  Iy_th  = zeros(1,nobs);
 fy1_th  = zeros(nfft,nobs);  fy2_th = zeros(nfft,nobs);
@@ -120,7 +117,7 @@ for m = 1:4
 end
 
 %% ============================================================
-%  2) COMPUTE — all SNR x noise colors x realizations
+% all SNR x noise colors x realizations
 % ============================================================
 % reduced storage, indexed [SNR, color]
 TRmed = cell(nSNR,nN); TRq1 = cell(nSNR,nN); TRq3 = cell(nSNR,nN); SPmed = cell(nSNR,nN);
@@ -229,7 +226,7 @@ frac = linspace(0.30, 1.0, nSNR)';
 cols_snr = 1 - frac .* (1 - base);
 
 %% ============================================================
-%  (a) PER-COLOUR TRACE GRID   (rows = SNR, cols = measure)
+%  PER-COLOUR TRACE GRID   (rows = SNR, cols = measure)
 % ============================================================
 for e = 1:nN
     fh = figure('Units','inches','Position',[0.5 0.5 13 9.5], ...
@@ -276,7 +273,7 @@ for e = 1:nN
 end
 
 %% ============================================================
-%  (b) PER-COLOUR SPECTROGRAM GRID   (rows = SNR, cols = measure)
+%  PER-COLOUR SPECTROGRAM GRID   (rows = SNR, cols = measure)
 % ============================================================
 for e = 1:nN
     fh = figure('Units','inches','Position',[0.5 0.5 13 9.5], ...
@@ -316,7 +313,7 @@ for e = 1:nN
 end
 
 %% ============================================================
-%  (c) Iy OVERLAY SUMMARY   (2x2, one panel per noise color)
+%  Ix1;x2;y OVERLAY SUMMARY   (2x2, one panel per noise color)
 % ============================================================
 fh = figure('Units','inches','Position',[0.5 0.5 12 8.5], ...
             'Name','Iy overlay vs SNR', 'Theme','Light','WindowState','maximized');
@@ -351,7 +348,7 @@ fprintf('  saved %s\n', fname);
 if closeAfterSave, close(fh); end
 
 %% ============================================================
-%  (d) COUPLING PARAMETERS + NOISE SPECTRA
+%  COUPLING PARAMETERS + NOISE SPECTRA
 %      Left : the time-varying coupling a(t_n) (and 1 - a(t_n))
 %      Right: power spectra of the colored noises (flat / 1/f / 1/f^2)
 % ============================================================
@@ -416,9 +413,6 @@ fprintf('\nTotal time %.0fs. Done — %d trace grids + %d spectro grids + 1 over
 %% ============================================================
 %  (e) SINGLE-SNR SPECTROGRAM STRIP ACROSS NOISE COLOURS
 %      Worst-case SNR, noise colours (rows) x measures (cols).
-%      Shows whether pink (1/f) and brown (1/f^2) erode the LF band
-%      relative to white -- the spectral evidence the time-domain
-%      overlay cannot provide.
 % ============================================================
 snr_pick  = 1;            % SNR (linear) to display; 1 = 0 dB (worst case)
 cols_pick = [2 3 4];      % rows: noise colour idx 1=clean 2=white 3=pink 4=brown
