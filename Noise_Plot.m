@@ -1,5 +1,5 @@
 %% PSD of White, Pink, and Brown Noise
-% To run this code is needed the DSP MATLAB Toolbox
+%% To run this code is needed the DSP MATLAB Toolbox
 clear; close all; clc;
 
 %% Parameters
