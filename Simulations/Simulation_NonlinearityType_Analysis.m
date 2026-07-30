@@ -1,6 +1,6 @@
 %% Simulation_NonlinearityType_Analysis_Realizations.m
 clear; close all; clc;
-addpath('functions');
+addpath('../functions');
 
 %% ---------------- parameters ----------------
 fs    = 2;     nfft = 1024;    nobs = 4000;
