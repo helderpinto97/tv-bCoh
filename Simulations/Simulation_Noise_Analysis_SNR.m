@@ -1,6 +1,6 @@
 %% Simulation_Noise_Analysis_SNR.m
 clear; close all; clc;
-addpath('functions');
+addpath('../functions');
 
 %% ============================================================
 %  PARAMETERS
