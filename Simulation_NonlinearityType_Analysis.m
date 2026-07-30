@@ -55,8 +55,7 @@ sref = std(Xlin, 0, 2)';            % 1 x M
 
 %% ============================================================
 %  THEORETICAL measures from the TRUE (linear) TV-VAR  (ground truth)
-%  Estimation-free closed form -> compute once. These exact curves
-%  replace the old coupling reference and are drawn in BLACK.
+%  Estimation-free closed form -> compute once.
 % ============================================================
 par.poles{1} = [0.9 f_HF_nom];      % HF autonomous oscillator (process 1)
 par.poles{4} = [0.9 f_LF_nom];      % LF autonomous oscillator (process 4)
@@ -163,8 +162,7 @@ end
 %% ============================================================
 %  PLOT — 6 x 4 grid  (rows = nonlinearity type, cols = measure)
 %  Coloured median + IQR band per panel. The BLACK square wave is the
-%  coupling GATE (ON/OFF), scaled into each column, drawn in place of the
-%  theoretical linear-coupling reference.
+%  coupling GATE (ON/OFF).
 % ============================================================
 outRoot = fullfile(pwd, 'NonlinearityType_Figures_NEW');
 if ~exist(outRoot,'dir'), mkdir(outRoot); end
@@ -227,16 +225,14 @@ for kk = 1:nT                               % rows = nonlinearity type
 end
 
 fname = fullfile(outRoot, 'Nonlinearities_TimeDomain.eps');
-% drawnow; exportgraphics(fh, fname, 'Resolution', 600);
-exportgraphics(fh, strrep(fname,'.png','.eps'), 'ContentType','vector','Resolution',600);
+drawnow; exportgraphics(fh, fname, 'Resolution', 600);
 savefig(fh, fullfile(outRoot, 'Nonlinearities_TimeDomain.fig'));   % editable MATLAB figure
 fprintf('  figure ready: %s\n', fname);
 
 %% ============================================================
 %  PLOT — 6 x 4 grid, TIME-FREQUENCY measures (spectrograms)
 %  rows = nonlinearity type, cols = measure.  The coupling GATE is marked
-%  by BLACK dashed vertical lines at every ON/OFF transition (same idea as
-%  the black gate in the time-domain figure above).
+%  by BLACK dashed vertical lines at every ON/OFF transition.
 % ============================================================
 cmapTF = parula(256);
 try, cm = load('colmap.mat','VRVmap'); cmapTF = cm.VRVmap;
