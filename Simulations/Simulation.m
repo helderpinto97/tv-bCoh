@@ -1,6 +1,6 @@
 %% test IIR and total interdependence measures on a 7-variate VAR model
 clear; close all; clc;
-addpath('functions');
+addpath('../functions');
 
 c1max = 0.8;
 fs    = 100;
