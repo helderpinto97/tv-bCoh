@@ -1,13 +1,4 @@
 %% Simulation_NonlinearityType_Analysis_Realizations.m
-% Monte-Carlo version of Simulation_NonlinearityType_Analysis.m.
-%   * runs nReal independent realizations per nonlinearity type
-%   * summarizes each scalar measure by its MEDIAN and IQR (25-75%) across
-%     realizations (shaded band + median line)
-%   * the reference curve is now the THEORETICAL decomposition of the true
-%     (linear) TV-VAR model -- computed in closed form from the known
-%     coefficients via theoreticalVAR -- instead of the raw coupling a(t).
-%     The decomposition measures are invariant to the per-channel z-scoring,
-%     so the natural-unit theory matches the z-scored estimates.
 clear; close all; clc;
 addpath('functions');
 
