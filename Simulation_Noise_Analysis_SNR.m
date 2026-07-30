@@ -18,7 +18,7 @@ f_osc = n_osc_cycles * fs / nobs;   % (Hz)
 c1max = 0.8;       % coupling amplitude
 M     = 7;       % number of VAR processes
 c_ff  = 0.98;    % RLS forgetting factor
-nReal = 1;     % number of realizations
+nReal = 100;     % number of realizations
 base_seed = 4000;% realization seeds: base_seed + r
 
 snr_list = [100, 10, 5, 1];  
