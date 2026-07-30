@@ -1,4 +1,4 @@
-%% Simulation_Confounder_TimeProfiles.m
+%% Simulation_Confounder.m
 clear all; close all; clc;
 addpath('functions');
 
@@ -32,7 +32,7 @@ fprintf('=== Confounder impact: common Gaussian noise (with vs without) ===\n');
 fprintf('  nobs=%d | p_est=%d | ff=%.2f | gON=%.2f | %d realizations\n\n', ...
         nobs, p_est, c_ff, gON, nReal);
 
-%% ---------------- base 3-node VAR (stationary, built once) ----------------
+%% ---------------- base 3-node VAR ----------------
 parB.poles = {[0.90 0.35], [0.90 0.35], [0.90 0.35]};  % X1, X2, Y all resonant at 35 Hz (0.35*fs)
 parB.coup  = [1 3 1 c; 2 3 1 c];         % X1->Y , X2->Y
 parB.Su    = [1 1 1];                   % small target self-drive -> sources dominate Y
