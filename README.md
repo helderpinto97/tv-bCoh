@@ -54,23 +54,6 @@ simulation scripts:
 | `iispectral.m` | Block coherences and the association / interaction measures (the method's core) |
 | `subplot_tight.m` | Tight-margin subplot helper for the figures |
 
-### `functions/` — auxiliary
-
-Provided for completeness; **not called** by any script in `Simulations/`:
-
-| File | Purpose | Note |
-|------|---------|------|
-| `tvID_VAR_RLS.m` | RLS TV-VAR identification without initial conditions | — |
-| `mos_id_tv_VAR_RLS.m` | RLS-based model-order selection | requires external `knee_pt` (not bundled) |
-| `lrp_LinReg.m` | Linear regression of processes from VAR parameters | — |
-| `lrp_Yule.m` | Yule–Walker / Lyapunov solution for VAR covariances | — |
-| `lrp_oir_mir.m` | MIR / OIR between two blocks | requires `lrp_MIR` and `oir_subindexes` (not bundled) |
-
-> **Note:** `mos_id_tv_VAR_RLS.m` and `lrp_oir_mir.m` depend on functions that
-> are not included in this repository (`knee_pt.m`, `lrp_MIR.m`,
-> `oir_subindexes.m`). Add these before calling those routines. The main
-> simulation pipeline does not use them.
-
 ### `Simulations/`
 
 | Script | What it does |
@@ -125,8 +108,7 @@ If you use this toolbox, please cite:
 > Pinto, H., Dias, C., Vergara, V. R., Barà, C., Pernice, R., Rocha, A. P.,
 > Faes, L., and Antonacci, Y. (2025). *Time-Frequency Linear Interdependence
 > Measures Reveal Multivariate Patterns of Cerebrovascular-Autonomic
-> Interactions in Traumatic Brain Injury.* (Manuscript under review — DOI to be
-> added upon publication.)
+> Interactions in Traumatic Brain Injury.* (Manuscript under review.)
 
 ## License
 
