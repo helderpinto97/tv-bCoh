@@ -1,6 +1,6 @@
 %% Simulation_Confounder.m
 clear all; close all; clc;
-addpath('functions');
+addpath('../functions');
 
 %% ---------------- parameters ----------------
 fs    = 2;      % sampling frequency (Hz)
