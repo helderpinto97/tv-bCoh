@@ -17,7 +17,7 @@ f_osc = n_gate_cycles * fs / nobs;   % (Hz)
 c     = 0.9;      % genuine coupling X1->Y , X2->Y (strong -> visible synergy)
 gON   = 1.0;      % common-noise level when ON (relative to each channel std)
 
-nReal = 2;       % number of realizations
+nReal = 100;       % number of realizations
 p_est = 2;        % estimation order (common noise -> needs > true VAR order)
 c_ff  = 0.98;     % RLS forgetting factor
 base_seed = 9000;
